@@ -1,9 +1,11 @@
 name: Update Onboarding Site
 on:
-  workflow_dispatch:
   push:
-    paths:
-    - 'First_Flask_APP/**'
+   branches:
+   [ main ]
+   
+   workflow_dispatch:
+   
 jobs:
   update_onboarding:
     name: Update onboarding

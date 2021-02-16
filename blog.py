@@ -3,20 +3,23 @@ from flask import (
 )
 from werkzeug.exceptions import abort
 
-from First_Flask_APP.auth import login_required
-from First_Flask_APP.db import get_db
+from jtkarmaapp.auth import login_required
+from jtkarmaapp.db import get_db
 
 bp = Blueprint('blog', __name__)
 
 
 @bp.route('/')
 def index():
+
     db = get_db()
+
     posts = db.execute(
         'SELECT p.id, title, body, created, author_id, username'
         ' FROM post p JOIN user u ON p.author_id = u.id'
         ' ORDER BY created DESC'
-    ).fetchall()
+       ).fetchall()
+    
     return render_template('blog/index.html', posts=posts)
 
 

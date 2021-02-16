@@ -8,7 +8,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'First_Flask_APP.sqlite'),
+        DATABASE=os.path.join(app.instance_path, 'jtkarma.co.uk.sqlite'),
     )
 
     if test_config is None:
@@ -27,7 +27,9 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/hello')
     def hello():
-        return 'Hello, World'
+        return 'changed'
+        print(app.config['DATABASE'] )
+        return 'Hello, World the database is set to ' + app.config['DATABASE'] + 'END'
 
     from . import db
     db.init_app(app)
@@ -40,3 +42,4 @@ def create_app(test_config=None):
     app.add_url_rule('/', endpoint='index')
 
     return app
+

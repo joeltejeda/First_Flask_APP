@@ -1,9 +1,9 @@
 name: Update Onboarding Site
 on:
  workflow_dispatch:
-  pull_request:
+  pull:
    branches: [ main ]
-  push_request:
+  push:
    branches: [ main ]
    
 jobs:

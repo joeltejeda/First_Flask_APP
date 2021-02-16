@@ -4,8 +4,6 @@ on:
   pull_request:
    branches: [ main ]
    
-
-   
 jobs:
   update_onboarding:
     name: Update onboarding
@@ -19,8 +17,7 @@ jobs:
         ssh-add - <<< "${{ secrets.SERVER_PRIVATE_KEY }}"
         ssh-keyscan ${{ secrets.SERVER_HOST }}>> ~/.ssh/known_hosts
         
-     name: Pull new site	
-    
+    - name: Pull new site	
       run: |	
         set -x	
         eval `ssh-agent -s`	

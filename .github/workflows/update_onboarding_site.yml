@@ -24,4 +24,4 @@ jobs:
         set -x
         eval `ssh-agent -s`
         ssh-add - <<< "${{ secrets.SERVER_PRIVATE_KEY }}"
-        ssh ${{ secrets.JTKARMA_USER }}@${{ secrets.SERVER_HOST }} -C "sudo -S /etc/init.d/apache2 reload; {{ secrets.USER_PASSWORD }}"
+        ssh ${{ secrets.JTKARMA_USER }}@${{ secrets.SERVER_HOST }} -C "sudo -S /etc/init.d/apache2 reload; ${{ secrets.USER_PASSWORD }}"

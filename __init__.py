@@ -31,6 +31,11 @@ def create_app(test_config=None):
         print(app.config['DATABASE'] )
         return 'Hello, World the database is set to ' + app.config['DATABASE'] + 'END'
 
+    @app.route("/contact")
+    def contact():
+        return "please contact us on email at hello@example.com"
+
+
     from . import db
     db.init_app(app)
 

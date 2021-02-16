@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-    - 'First_Flask_APP'
+    - 'First_Flask_APP/**'
 jobs:
   update_onboarding:
     name: Update onboarding

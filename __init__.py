@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template, request
 
 
 def create_app(test_config=None):
@@ -35,6 +35,14 @@ def create_app(test_config=None):
     def contact():
         return "please contact us on email at hello@example.com"
 
+    @app.route("/serverconfig")
+    def serverconfig():
+        return render_template ("forms/serverconfig.html")
+
+    @app.route ("/serverconfig", methods=["POST"])
+    def save_serverconfig():
+        return render_template("thank-you.html", data=request.form)
+
 
     from . import db
     db.init_app(app)
@@ -47,4 +55,3 @@ def create_app(test_config=None):
     app.add_url_rule('/', endpoint='index')
 
     return app
-

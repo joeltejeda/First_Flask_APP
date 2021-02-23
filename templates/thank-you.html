@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+{% block header %}
+    <title>Server Configuration</title>
+    </head>
+{% endblock %}
+
+{% block content %}
+
+  <body>
+    <h1> Thank you for Your Order </h1>
+Your Server specifications are:
+RAM: {{data.RAM}}gb, Disk: {{data.hardrive}}gb, Processors: {{data.CPU}}, OS: {{data.OS}}
+</br>
+Your Total is:
+  </body>
+</html>
+{% endblock %}

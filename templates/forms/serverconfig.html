@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+{% block header %}
+    <title>Server Configuration</title>
+    </head>
+{% endblock %}
+
+{% block content %}
+
+  <body>
+
+    <h1> Configure Your Server </h1>
+<form  method="post">
+  <label for="RAM"></label> RAM (GB)
+  <input type="number" name="RAM" value="" min="1" max="500"required > gb
+  <label for="hardrive"></label> Disk(GB):
+  <input type="number" name="hardrive" value="10" min="10" max="10000"required > gb
+  <label for="CPU"></label> Processors:
+  <input type="text" name="CPU" value="1" placeholder="1" readonly >
+  <label for="OS"></label> OS:
+  <input type="text" name="OS" value="Ubuntu 64bits (v20.04)" readonly>
+  <label for="total"></label> Your Total is:
+  <input type="text" name="total" id="sum" onkeypress="myFunction()">
+
+
+  <input type="submit" name="Submit" value="Save">
+</form>
+
+
+
+<script>
+function myFunction() {
+ var RAM = document.getElementByName("RAM");
+ var DISK = document.getElementByName("hardrive");
+ var CPU = document.getElementsByName("CPU");
+ TOTAL.value = RAM + DISK;
+}
+</script>
+  </body>
+
+
+</html>
+{% endblock %}

@@ -10,7 +10,8 @@
     {% else %}
       <li><a href="{{ url_for('auth.register') }}">Register</a></li>
       <li><a href="{{ url_for('auth.login') }}">Log In</a><li>
-	<li><a >About </a></li>
+      <li><a href="{{ url_for('serverconfig') }}">Buy a VPS</a><li>
+      <li><a href="{{ url_for('contact') }}">Contact US</a><li>
     {% endif %}
   </ul>
 </nav>
